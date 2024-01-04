@@ -1,5 +1,5 @@
 import "./App.css";
-import Button from "./components/button/Button";
+import Button, { Card } from "./components/button/Button";
 function App() {
   return (
     <div className="App">
@@ -7,6 +7,9 @@ function App() {
       <Button />
       <Button />
       <Button />
+      <Card />
+      <Card />
+      <Card />
     </div>
   );
 }
