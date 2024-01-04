@@ -1,15 +1,7 @@
 const Button = props => {
   console.log(props);
 
-  return (
-    <button
-      style={{
-        backgroundColor: props.bgColor,
-      }}
-    >
-      {props.content}
-    </button>
-  );
+  return <button>{props.children}</button>;
 };
 
 export default Button;

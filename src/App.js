@@ -3,8 +3,9 @@ import Button from "./components/button/Button";
 function App() {
   return (
     <div className="App">
-      <Button content="login" bgColor="blue" />
-      <Button content="logout" required />
+      <Button>login</Button>
+
+      <Button>logout</Button>
     </div>
   );
 }
