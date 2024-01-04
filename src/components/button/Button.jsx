@@ -1,12 +1,14 @@
-const Button = () => {
-  return <button>click</button>;
-};
+const Button = props => {
+  console.log(props);
 
-export const Card = () => {
   return (
-    <section>
-      <h1>this is card component</h1>
-    </section>
+    <button
+      style={{
+        backgroundColor: props.bgColor,
+      }}
+    >
+      {props.content}
+    </button>
   );
 };
 

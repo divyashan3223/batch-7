@@ -1,15 +1,10 @@
 import "./App.css";
-import Button, { Card } from "./components/button/Button";
+import Button from "./components/button/Button";
 function App() {
   return (
     <div className="App">
-      <Button />
-      <Button />
-      <Button />
-      <Button />
-      <Card />
-      <Card />
-      <Card />
+      <Button content="login" bgColor="blue" />
+      <Button content="logout" required />
     </div>
   );
 }
