@@ -3,9 +3,8 @@ import Button from "./components/button/Button";
 function App() {
   return (
     <div className="App">
-      <Button user>login</Button>
-
-      <Button>logout</Button>
+      <Button showHeader>show</Button>
+      <Button>hide</Button>
     </div>
   );
 }
