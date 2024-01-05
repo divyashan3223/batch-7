@@ -1,10 +1,9 @@
 import "./App.css";
-import Button from "./components/button/Button";
+import Course from "./components/array/Course";
 function App() {
   return (
     <div className="App">
-      <Button showHeader>show</Button>
-      <Button>hide</Button>
+      <Course />
     </div>
   );
 }
