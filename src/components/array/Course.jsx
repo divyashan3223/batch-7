@@ -1,20 +1,11 @@
-const courses = ["java", "python", "plc", "web development"];
-
-// const mappedCourse = courses.map(course => <li>{course}</li>);
+const person = {
+  name: "ragnar",
+  age: 21,
+  course: "python",
+};
 
 const Course = () => {
-  // console.log(mappedCourse);
-  return (
-    <div>
-      {/* <ul>{mappedCourse}</ul> */}
-
-      <ul className="list-container">
-        {courses.map(course => (
-          <li>{course}</li>
-        ))}
-      </ul>
-    </div>
-  );
+  return <div>{person.name}</div>;
 };
 
 export default Course;
