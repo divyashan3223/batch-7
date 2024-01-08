@@ -1,9 +1,9 @@
 import "./App.css";
-import Container from "./task/products/container/Container";
+import Counter from "./components/counter/Counter";
 function App() {
   return (
     <div className="App">
-      <Container />
+      <Counter />
     </div>
   );
 }
