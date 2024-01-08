@@ -23,9 +23,16 @@ import { useState } from "react";
 
 const Counter = () => {
   const [count, setCount] = useState(10);
-
+  console.log("rendering");
   const handleIncrement = () => {
-    setCount(count + 1);
+    // const updatedValue = count < 15 ? count + 1 : count;
+    // setCount(updatedValue);
+    // ----------------------------------------------------------------
+    // if (count < 15) {
+    //   setCount(count + 1);
+    // }
+    // ----------------------------------------------------------------
+    count < 15 && setCount(count + 1);
   };
   const handleDecrement = () => {
     setCount(count - 1);
