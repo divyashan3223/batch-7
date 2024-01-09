@@ -1,54 +1,47 @@
 import { useState } from "react";
+import Input from "./Input";
+
+const initialState = {
+  firstName: "",
+  lastName: "",
+  course: "",
+};
 
 const Form = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [course, setCourse] = useState("");
+  const [student, setStudent] = useState(initialState);
+  const { course, firstName, lastName } = student;
+
+  const handleChange = event => {
+    const { value, name } = event.target;
+    const updatedStudent = { ...student, [name]: value };
+    setStudent(updatedStudent);
+  };
+
   return (
     <form>
       <h1>
-        firstname - {firstName} <br /> lastName - {lastName} <br /> course -{" "}
+        firstname - {firstName} <br /> lastName - {lastName} <br /> course -
         {course}
       </h1>
-      <div>
-        <label htmlFor="firstName">
-          FirstName
-          <input
-            type="text"
-            name="firstName"
-            id="firstName"
-            value={firstName}
-            onChange={event => {
-              console.log(event.target.value);
-              setFirstName(event.target.value);
-            }}
-          />
-        </label>
-      </div>
-      <div>
-        <label htmlFor="lastName">
-          lastName
-          <input
-            type="text"
-            name="lastName"
-            id="lastName"
-            value={lastName}
-            onChange={event => setLastName(event.target.value)}
-          />
-        </label>
-      </div>
-      <div>
-        <label htmlFor="course">
-          course
-          <input
-            type="text"
-            name="course"
-            id="course"
-            value={course}
-            onChange={event => setCourse(event.target.value)}
-          />
-        </label>
-      </div>
+      <Input
+        name="firstName"
+        onChange={event => handleChange(event)}
+        value={firstName}
+        label="firstName"
+      />
+      <Input
+        name="lastName"
+        onChange={event => handleChange(event)}
+        value={lastName}
+        label="lastName"
+      />
+      <Input
+        name="course"
+        onChange={event => handleChange(event)}
+        value={course}
+        label="course"
+      />
+
       <input type="submit" value="Add Student" />
     </form>
   );

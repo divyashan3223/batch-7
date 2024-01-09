@@ -1,9 +1,13 @@
+import { useState } from "react";
 import "./App.css";
-import Form from "./components/form/Form";
+import EffectComponent from "./hooks/EffectComponent";
 function App() {
+  const [show, setShow] = useState(false);
   return (
     <div className="App">
-      <Form />
+      <button onClick={() => setShow(!show)}>change</button>
+
+      {show && <EffectComponent />}
     </div>
   );
 }
