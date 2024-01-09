@@ -54,7 +54,13 @@ const Course = () => {
               <h4>
                 {course.title} - {course.fees}
               </h4>
-              <button onClick={() => handleViewCourse(course)}>view</button>
+              <button
+                onClick={() => {
+                  handleViewCourse(course);
+                }}
+              >
+                view
+              </button>
               <button onClick={() => handleDeleteCourse(course.id)}>
                 delete
               </button>
