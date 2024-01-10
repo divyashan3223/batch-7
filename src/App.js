@@ -1,13 +1,9 @@
-import { useState } from "react";
 import "./App.css";
-import EffectComponent from "./hooks/EffectComponent";
+import Container from "./components/Container";
 function App() {
-  const [show, setShow] = useState(false);
   return (
     <div className="App">
-      <button onClick={() => setShow(!show)}>change</button>
-
-      {show && <EffectComponent />}
+      <Container />
     </div>
   );
 }
