@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const httpClient = axios.create({
-  baseURL: "https://dummyjson.com/",
+  baseURL: "http://localhost:8080",
 });
 
 export default httpClient;

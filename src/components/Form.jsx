@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { createProduct } from "../api/products";
 // step-5
 const initialState = {
   title: "",
@@ -8,7 +9,7 @@ const initialState = {
   amount: 0,
 };
 /* step-13 receiving props*/
-const Form = ({ onSubmit }) => {
+const Form = () => {
   // step-6
   const [transaction, setTransaction] = useState(initialState);
   // step-7
@@ -18,10 +19,10 @@ const Form = ({ onSubmit }) => {
   };
 
   // step-9
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     // step-10
-    onSubmit(transaction);
+    await createProduct(transaction);
     setTransaction(initialState);
   };
 

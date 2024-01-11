@@ -7,7 +7,7 @@ const Products = () => {
   useEffect(() => {
     getProducts()
       .then((data) => {
-        setProducts([...data.products]);
+        setProducts([...data]);
       })
 
       .catch((err) => setError(err.message));
