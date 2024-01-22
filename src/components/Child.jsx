@@ -1,10 +1,8 @@
 import { memo } from "react";
 
-const Child = () => {
+const Child = ({ person }) => {
   console.log("child rendering");
-  return <div>Child</div>;
+  return <div>Child -{person.name}</div>;
 };
 
-const MemoizedChild = memo(Child);
-
-export default MemoizedChild;
+export default memo(Child);
