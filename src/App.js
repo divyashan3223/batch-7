@@ -1,11 +1,15 @@
+import { useState } from "react";
 import "./App.css";
-import Products from "./components/Products";
-import Form from "./components/Form";
+import Child from "./components/Child";
+
 function App() {
+  const [count, setCount] = useState(10);
+  console.log("parent rendering");
   return (
     <div className="App">
-      <Form />
-      <Products />
+      <h3>Parent Component -{count}</h3>
+      <button onClick={() => setCount(count + 1)}>click</button>
+      <Child />
     </div>
   );
 }
