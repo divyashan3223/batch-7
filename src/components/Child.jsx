@@ -1,8 +1,13 @@
 import { memo } from "react";
 
-const Child = ({ person }) => {
+const Child = ({ handleChange, count }) => {
   console.log("child rendering");
-  return <div>Child -{person.name}</div>;
+  return (
+    <div>
+      Child -{count}
+      <button onClick={handleChange}>change</button>
+    </div>
+  );
 };
 
 export default memo(Child);
