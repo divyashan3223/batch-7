@@ -1,21 +1,33 @@
-import { useCallback, useMemo, useState } from "react";
-import "./App.css";
-import Child from "./components/Child";
+import { useState } from "react";
+import Button from "./components/Button";
+import Input from "./components/Input";
+import { createTodo } from "./api/todo";
+import Container from "./components/Container";
 
-function App() {
-  const [count, setCount] = useState(10);
-  console.log("parent rendering");
-  const handleChange = useCallback(() => {
-    setCount(count + 1);
-  }, [count]);
+const App = () => {
+  const [title, setTitle] = useState("");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (title.length > 2) {
+      await createTodo({
+        done: false,
+        title,
+      });
+      setTitle("");
+    }
+  };
   return (
-    <div className="App">
-      <h3>Parent Component -{count}</h3>
-      <button onClick={() => setCount(count + 1)}>click</button>
-
-      <Child handleChange={handleChange} />
-    </div>
+    <main>
+      <section>
+        <h1>things to do:</h1>
+        <form onSubmit={handleSubmit}>
+          <Input value={title} onChange={(e) => setTitle(e.target.value)} />
+          <Button type="submit">Add Todo</Button>
+        </form>
+        <Container />
+      </section>
+    </main>
   );
-}
+};
 
 export default App;

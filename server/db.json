@@ -1,4 +1,19 @@
 {
-  "products": [],
-  "users": []
+  "todos": [
+    {
+      "id": "b714",
+      "done": false,
+      "title": "second"
+    },
+    {
+      "id": "35e1",
+      "done": true,
+      "title": "two"
+    },
+    {
+      "id": "bc55",
+      "done": false,
+      "title": "three"
+    }
+  ]
 }
