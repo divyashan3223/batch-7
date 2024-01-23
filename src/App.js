@@ -1,9 +1,10 @@
-import Container from "./components/Container";
+import BoxOne from "./components/Box";
 
 const App = () => {
   return (
     <main>
-      <Container />
+      <h1>this is my application</h1>
+      <BoxOne />
     </main>
   );
 };
