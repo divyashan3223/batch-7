@@ -1,8 +1,8 @@
 import { memo } from "react";
 
-const ChildOne = memo(() => {
+const ChildOne = memo(({ count }) => {
   console.log("one");
-  return <div>ChildOne</div>;
+  return <div>ChildOne-{count}</div>;
 });
 
 export const ChildTwo = memo(() => {
