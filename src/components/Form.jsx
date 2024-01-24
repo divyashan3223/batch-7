@@ -1,19 +1,24 @@
+import { useEffect } from "react";
 import { useRef } from "react";
 
 const Form = () => {
-  const valueRef = useRef(21);
-  console.log(valueRef);
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    console.log(inputRef);
+    inputRef.current.focus();
+  }, []);
+
+  const handleClick = () => {};
   return (
     <div>
-      <h1>Current value - {valueRef.current}</h1>
-      <button
-        onClick={() => {
-          valueRef.current++;
-          console.log(valueRef);
-        }}
-      >
-        change
-      </button>
+      <form>
+        <div>
+          <label htmlFor="">UserName</label>
+          <input type="text" ref={inputRef} />
+        </div>
+      </form>
+      <button onClick={handleClick}>focus</button>
     </div>
   );
 };
