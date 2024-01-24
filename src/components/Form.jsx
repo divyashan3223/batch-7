@@ -1,31 +1,19 @@
-import { useContext, useState } from "react";
-import { todoContext } from "../context/TodoContextProvider";
+import { useRef } from "react";
 
 const Form = () => {
-  const [title, setTitle] = useState("");
-
-  const { addTodo } = useContext(todoContext);
-  const handleSubmit = async (submitEvent) => {
-    submitEvent.preventDefault();
-    if (title.length) {
-      addTodo({
-        id: 1,
-        title,
-        done: false,
-      });
-      alert("todo added successfully");
-      setTitle("");
-    } else {
-      alert("Please enter a title");
-    }
-  };
+  const valueRef = useRef(21);
+  console.log(valueRef);
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="">Enter Title</label>
-        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-        <input type="submit" value="Add Todo" />
-      </form>
+      <h1>Current value - {valueRef.current}</h1>
+      <button
+        onClick={() => {
+          valueRef.current++;
+          console.log(valueRef);
+        }}
+      >
+        change
+      </button>
     </div>
   );
 };
