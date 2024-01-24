@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import ChildOne, { ChildThree, ChildTwo } from "./components/Child";
 
 const App = () => {
   const [count, setCount] = useState(10);
-  const [age, setAge] = useState(5);
+  const [age, setAge] = useState(10);
   console.log("parent");
+
+  const person = useMemo(() => {
+    return {
+      name: "ragnar",
+      age: 21,
+    };
+  }, [count]);
+
   return (
     <main>
       <div>Parent</div>
@@ -12,7 +20,7 @@ const App = () => {
       <button onClick={() => setAge(age + 1)}>change</button>
       <ChildOne count={count} />
       <ChildTwo />
-      <ChildThree age={age} />
+      <ChildThree person={person} />
     </main>
   );
 };
